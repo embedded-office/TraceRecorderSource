@@ -17,6 +17,8 @@
 // #error "TRC_CFG_CPU_CLOCK_HZ needs to be set to the CPU frequency."
 // #endif
 
+void* prvTrcTickTask = 0;
+
 typedef struct TraceKernelPortData
 {
 	TraceTaskHandle_t xTaskHandles[TRC_CFG_CORE_COUNT];

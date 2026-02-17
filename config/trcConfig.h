@@ -201,7 +201,7 @@ to be adapted according chosen RAM and its availability.*/
  * In snapshot mode, the TzCtrl task is only used for stack monitoring and is
  * not created unless this is enabled.
  */
-#define TRC_CFG_ENABLE_STACK_MONITOR 0
+#define TRC_CFG_ENABLE_STACK_MONITOR 1
 
 /**
  * @def TRC_CFG_STACK_MONITOR_MAX_TASKS
@@ -344,7 +344,7 @@ to be adapted according chosen RAM and its availability.*/
  *
  * Default value is 1.
  */
-#define TRC_CFG_RECORDER_DATA_INIT 0
+#define TRC_CFG_RECORDER_DATA_INIT 1
 
 /**
  * @def TRC_CFG_RECORDER_DATA_ATTRIBUTE
