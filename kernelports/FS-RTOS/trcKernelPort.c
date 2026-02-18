@@ -13,10 +13,6 @@
 
 #if (TRC_USE_TRACEALYZER_RECORDER == 1)
 
-// #if(TRC_CFG_CPU_CLOCK_HZ == 0)
-// #error "TRC_CFG_CPU_CLOCK_HZ needs to be set to the CPU frequency."
-// #endif
-
 void* prvTrcTickTask = 0;
 
 typedef struct TraceKernelPortData
@@ -42,13 +38,7 @@ traceResult xTraceKernelPortInitialize(TraceKernelPortDataBuffer_t* const pxBuff
 
 traceResult xTraceKernelPortEnable(void)
 {
-	// uint32_t i;
-
-	// for (i = 0; i < (TRC_CFG_CORE_COUNT); i++)
-	// {
-	// 	(void)xTraceObjectRegister(PSF_EVENT_TASK_CREATE, (void*)0, "xTraceTzCtrl", 1u, (TraceObjectHandle_t*)&pxKernelPortData->xTaskHandles[i]);
-	// 	(void)xTraceTaskSetCurrentOnCore(i, pxKernelPortData->xTaskHandles[i]);
-	// }
+	/*xTraceTzCtrl is handled directly in the App Time tick call in the RTOS*/
 	
 	return TRC_SUCCESS;
 }

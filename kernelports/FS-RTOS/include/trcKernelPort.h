@@ -154,68 +154,13 @@ traceResult xTraceKernelPortEnable(void);
  * The event codes - should match the offline config file.
  ******************************************************************************/
 
-// /*** Event codes for streaming - should match the Tracealyzer config file *****/
-// #define PSF_EVENT_NULL_EVENT								0x00UL
-
-// #define PSF_EVENT_TRACE_START								0x01UL
-// #define PSF_EVENT_TS_CONFIG									0x02UL
-// #define PSF_EVENT_OBJ_NAME									0x03UL
-// #define PSF_EVENT_TASK_PRIORITY								0x04UL
-// #define PSF_EVENT_DEFINE_ISR								0x05UL
-
-// #define PSF_EVENT_IFE_NEXT									0x08UL
-// #define PSF_EVENT_IFE_DIRECT								0x09UL
-
-// #define PSF_EVENT_TASK_CREATE								0x10UL
-// #define PSF_EVENT_TASK_DELETE								0x11UL
-// #define PSF_EVENT_PROCESS_CREATE							0x12UL
-// #define PSF_EVENT_PROCESS_DELETE							0x13UL
-// #define PSF_EVENT_THREAD_CREATE								0x14UL
-// #define PSF_EVENT_THREAD_DELETE								0x15UL
-
-// #define PSF_EVENT_TASK_READY								0x20UL
-// #define PSF_EVENT_ISR_BEGIN									0x21UL
-// #define PSF_EVENT_ISR_RESUME								0x22UL
-// #define PSF_EVENT_TS_BEGIN									0x23UL
-// #define PSF_EVENT_TS_RESUME									0x24UL
-// #define PSF_EVENT_TASK_ACTIVATE								0x25UL
-
-// #define PSF_EVENT_MALLOC									0x30UL
-// #define PSF_EVENT_FREE										0x31UL
-// #define PSF_EVENT_MALLOC_FAILED								0x32UL
-// #define PSF_EVENT_FREE_FAILED								0x33UL
-
-// #define PSF_EVENT_LOWPOWER_BEGIN							0x38UL
-// #define PSF_EVENT_LOWPOWER_END								0x39UL
-
-// #define PSF_EVENT_STATEMACHINE_STATE_CREATE					0x40UL
-// #define PSF_EVENT_STATEMACHINE_CREATE						0x41UL
-// #define PSF_EVENT_STATEMACHINE_STATECHANGE					0x42UL
-
-// #define PSF_EVENT_INTERVAL_CHANNEL_CREATE					0x43UL
-// #define PSF_EVENT_INTERVAL_START							0x44UL
-// #define PSF_EVENT_INTERVAL_STOP								0x45UL
-// #define PSF_EVENT_INTERVAL_CHANNEL_SET_CREATE				0x46UL
-
-// #define PSF_EVENT_EXTENSION_CREATE							0x47UL
-
-// #define PSF_EVENT_HEAP_CREATE								0x48UL
-
-// #define PSF_EVENT_COUNTER_CREATE							0x49UL
-// #define PSF_EVENT_COUNTER_CHANGE							0x4AUL
-// #define PSF_EVENT_COUNTER_LIMIT_EXCEEDED					0x4BUL
-
 #define PSF_EVENT_DEPENDENCY_REGISTER						0x4CUL
 
 #define PSF_EVENT_RUNNABLE_REGISTER							0x4DUL
 #define PSF_EVENT_RUNNABLE_START							0x4EUL
 #define PSF_EVENT_RUNNABLE_STOP								0x4FUL
 
-// #define PSF_EVENT_USER_EVENT								0x50UL
-
 #define PSF_EVENT_USER_EVENT_FIXED							0x58UL
-
-// #define TRC_EVENT_LAST_ID									(PSF_EVENT_USER_EVENT_FIXED + 8ul)
 
 /*******************************************************************************
  * The event codes - should match the offline config file.

@@ -16,6 +16,7 @@
 #include <stdint.h>
 #include "ucos_ii.h"
 #include <trcDefines.h>
+#include <trcInterruptsUtils.h>
 
 extern uint32_t HAL_CoreGetClkFreq(void);
 

@@ -29,7 +29,6 @@ extern "C" {
  *****************************************************************************/
 /* Correct core should be defined per the board*/
 /* Completed as part the CMakeLists.txt with compile options*/
-#include "stm32h7xx.h"
 
 /**
  * @def TRC_CFG_HARDWARE_PORT
@@ -189,7 +188,7 @@ extern "C" {
 
 
 /*Buffer size allocated for tracealyzer usage given in bytes. Note that this size needs
-to be adapted according chosen RAM and its availability.*/
+to be adapted according chosen RAM and its availability. This is used when RingBuffer is used as Streamport.*/
 #define TRC_CFG_STREAM_BUFFSIZE_CUSTOM  250*1024    
 
 /**
