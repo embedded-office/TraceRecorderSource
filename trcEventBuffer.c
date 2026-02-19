@@ -400,6 +400,8 @@ traceResult xTraceEventBufferTransferAll(TraceEventBuffer_t* pxTraceEventBuffer,
 	uint32_t uiTail;
 	uint32_t uiSlack;
 
+	(void)uiCoreId;
+
 	/* This should never fail */
 	TRC_ASSERT(pxTraceEventBuffer != (void*)0);
 
@@ -467,6 +469,7 @@ traceResult xTraceEventBufferTransferChunk(TraceEventBuffer_t* pxTraceEventBuffe
 	uint32_t uiTail;
 	uint32_t uiSlack;
 	uint32_t uiBytesToWrite;
+	(void)uiCoreId;
 
 	/* This should never fail */
 	TRC_ASSERT(pxTraceEventBuffer != (void*)0);

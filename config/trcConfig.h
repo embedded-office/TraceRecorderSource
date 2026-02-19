@@ -15,6 +15,11 @@
 extern "C" {
 #endif
 
+#ifndef TRC_PERCEPIO
+#define TRC_PERCEPIO
+
+#endif
+
 /******************************************************************************
  * Include of processor header file
  *
@@ -22,7 +27,8 @@ extern "C" {
  * required at least for the ARM Cortex-M port, that uses the ARM CMSIS API.
  * Try that in case of build problems. Otherwise, remove the #error line below.
  *****************************************************************************/
-#error "Trace Recorder: Please include your processor's header file here and remove this line."
+/* Correct core should be defined per the board*/
+/* Completed as part the CMakeLists.txt with compile options*/
 
 /**
  * @def TRC_CFG_HARDWARE_PORT
@@ -41,7 +47,7 @@ extern "C" {
  * See trcHardwarePort.h for available ports and information on how to
  * define your own port, if not already present.
  */
-#define TRC_CFG_HARDWARE_PORT TRC_HARDWARE_PORT_NOT_SET
+#define TRC_CFG_HARDWARE_PORT TRC_HARDWARE_PORT_ARM_Cortex_M
 
 /**
  * @def TRC_CFG_SCHEDULING_ONLY
@@ -180,6 +186,11 @@ extern "C" {
  */
 #define TRC_CFG_TASK_MONITOR_MAX_TASKS 10
 
+
+/*Buffer size allocated for tracealyzer usage given in bytes. Note that this size needs
+to be adapted according chosen RAM and its availability. This is used when RingBuffer is used as Streamport.*/
+#define TRC_CFG_STREAM_BUFFSIZE_CUSTOM  250*1024    
+
 /**
  * @def TRC_CFG_ENABLE_STACK_MONITOR
  * @brief If enabled (1), the recorder periodically reports the unused stack space of
@@ -189,7 +200,7 @@ extern "C" {
  * In snapshot mode, the TzCtrl task is only used for stack monitoring and is
  * not created unless this is enabled.
  */
-#define TRC_CFG_ENABLE_STACK_MONITOR 0
+#define TRC_CFG_ENABLE_STACK_MONITOR 1
 
 /**
  * @def TRC_CFG_STACK_MONITOR_MAX_TASKS
@@ -346,7 +357,8 @@ extern "C" {
  *
  * Default value is empty.
  */
-#define TRC_CFG_RECORDER_DATA_ATTRIBUTE 
+#define TRC_CFG_RECORDER_DATA_ATTRIBUTE __attribute__((section(".trace_data"))) \
+                                      __attribute__((aligned(4))) 
 
 /**
  * @def TRC_CFG_USE_TRACE_ASSERT
