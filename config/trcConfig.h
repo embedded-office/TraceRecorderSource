@@ -29,6 +29,7 @@ extern "C" {
  *****************************************************************************/
 /* Correct core should be defined per the board*/
 /* Completed as part the CMakeLists.txt with compile options*/
+#include "stm32h7xx.h"
 
 /**
  * @def TRC_CFG_HARDWARE_PORT
